@@ -2,10 +2,12 @@
 #include <pthread.h>
 #include "programs.h"
 
-void EnterOffice(int id){
-  printf("Student %d enters the office\n", id);
+void EnterOffice(void * id){
+  long val = (long int)id;
+  printf("Student %ld enters the office\n", val);
 }
 
-void LeaveOffice(int id){
-  printf("Student %d leaves the office\n", id);
+void LeaveOffice(void * id){
+  long val = (long int)id;
+  printf("Student %ld leaves the office\n", val);
 }

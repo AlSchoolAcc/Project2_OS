@@ -2,11 +2,13 @@
 #include <pthread.h>
 #include "programs.h"
 
-void AnswerStart(int id) {
-  printf("Professor starts to answer question for student %d\n", id);
+void AnswerStart(void * id) {
+  long val = (long int)id;
+  printf("Professor starts to answer question for student %ld\n", val);
 }
 
-void AnswerDone(int id) {
-    printf("Professor is done with answer for student %d\n", id);
+void AnswerDone(void *id) {
+  long val = (long int)id;
+  printf("Professor is done with answer for student %ld\n", val);
 }
 

@@ -5,7 +5,8 @@
 void Professor() {
   int i;
 	for(i = 0; i < 2; i++) {
-		AnswerStart(i);
-		AnswerDone(i);
+		
+    AnswerStart(&i);
+		AnswerDone(&i);
 	}
 }

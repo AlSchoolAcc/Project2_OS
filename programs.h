@@ -2,14 +2,14 @@ void Student(int id);
 
 void Professor();
 
-void AnswerStart(int id);
+void AnswerStart(void * id);
 
-void AnswerDone(int id);
+void AnswerDone(void * id);
 
-void EnterOffice(int id);
+void EnterOffice(void * id);
 
-void LeaveOffice(int id);
+void LeaveOffice(void * id);
 
-void QuestionStart(int id);
+void QuestionStart(void * id);
 
-void QuestionDone(int id);
+void QuestionDone(void * id);

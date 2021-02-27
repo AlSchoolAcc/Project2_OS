@@ -8,9 +8,7 @@
 void main(int argc, char **argv){
   int i;
   pthread_t students[NUM_OF_STUDENTS];
-
   for(i = 0; i < NUM_OF_STUDENTS;i++){
-    int rc = pthread_create(&students[i], NULL, (void *)Student, (void *)&i);
-    printf("%d\n", i);
+    Student(i);
   }
 }
