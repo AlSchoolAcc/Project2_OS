@@ -1,0 +1,8 @@
+gcc -c -o main.o main.c
+gcc -c -o Answer.o Answer.c
+gcc -c -o Office.o Office.c
+gcc -c -o Question.o Question.c
+gcc -c -o Professor.o Professor.c
+gcc -c -o Student.o Student.c
+gcc -pthread -o test main.o Answer.o Office.o Question.o Professor.o Student.o
+rm *.o
