@@ -1,7 +1,8 @@
 #include<semaphore.h>
 
-extern sem_t mutex[];
+extern sem_t mutex;
 extern int officeSize;
+extern int professorDone;
 
 void Student(int id);
 

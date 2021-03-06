@@ -7,16 +7,19 @@
 
 #define NUM_OF_STUDENTS 5
 int officeSize = 3;
+int professorDone = 0;
 
-sem_t mutex[NUM_OF_STUDENTS];
+sem_t mutex;
 
 void main(int argc, char **argv){
- sem_init(&mutex[0], 0, 1);
-  int i;
+ sem_init(&mutex, 0, 1);
+  long i;
   pthread_t students[NUM_OF_STUDENTS];
+  pthread_t professor;
   for(i = 0; i < NUM_OF_STUDENTS;i++){
-    Student(i);
-    Professor();
+  pthread_create(&students[i], NULL, (void *)Student, (void *)i);
+  pthread_create(&professor, NULL, (void *)Professor, NULL);
+  pthread_join(students[i], NULL);
   }
  sem_destroy(&mutex);
 }

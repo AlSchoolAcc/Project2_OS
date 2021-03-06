@@ -11,7 +11,7 @@ void AnswerStart(void * id) {
 void AnswerDone(void *id) {
   long val = (long int)id;
   printf("Professor is done with answer for student %ld\n", val);
-  sem_post(&mutex);
-  sem_wait(&mutex);
+  //sem_post(&mutex);
+  //sem_wait(&mutex);
 }
 

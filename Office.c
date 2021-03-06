@@ -9,7 +9,7 @@ void EnterOffice(void * id){
 }
 
 void LeaveOffice(void * id){
-  sem_post(&mutex);
+  //sem_post(&mutex);
   long val = (long int)id;
   printf("Student %ld leaves the office\n", val);
 }
