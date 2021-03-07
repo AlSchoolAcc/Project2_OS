@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <pthread.h>
 #include "programs.h"
+#include <semaphore.h>
+
+//office acts as the buffer to queue students to talk to the professor
+int office[officeSize];
+int officeSize;
+int officeCounter;
 
 //students are semaphores
 void Student(int id) {
@@ -8,6 +14,7 @@ void Student(int id) {
   int length = (id % 4) + 1;
   
   sem_t studentSem;
+  sem_init(&studentSem, 0, 1);
   //pthread_t studentThread = malloc(sizeof(studentThread));
   EnterOffice(id);
 
@@ -27,6 +34,10 @@ void Professor() {
 		AnswerStart(i);
 		AnswerDone(i);
 	}
+}
+
+int main(int argc, char **argv) {
+
 }
 
 void AnswerStart(int id) {
