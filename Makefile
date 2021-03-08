@@ -2,6 +2,12 @@ CC=gcc
 DEPS = programs.h
 OBJ = main.o Answer.o Office.o Question.o Professor.o Student.o
 
+obj-m += kernel.o
+KDIR = /usr/src/kernels/$(shell uname -r)
+
+all:
+
+	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $<
 
@@ -10,4 +16,4 @@ test: $(OBJ)
 	rm *.o
 
 clean:
-	rm test
+	rm -rf *.ko *.mod.* *.symvers *.order *test
